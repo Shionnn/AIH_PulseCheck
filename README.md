@@ -34,8 +34,8 @@ The system was developed as part of an academic project and focuses on building 
 AIH_PulseCheck/
 ├─ backend/
 │  └─ index.js
+│  └─ package.json
 ├─ dialogflow-agent/
-├─ screenshots/
 └─ README.md
 ```
 
