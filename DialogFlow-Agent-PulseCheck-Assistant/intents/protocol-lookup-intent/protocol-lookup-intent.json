@@ -1,0 +1,10 @@
+{
+  "name": "7dca30c7-d401-4492-bf12-ef2fabac419f",
+  "displayName": "protocol-lookup-intent",
+  "parameters": [ {
+    "id": "number",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 7
+}

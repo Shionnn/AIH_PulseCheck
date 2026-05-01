@@ -1,0 +1,68 @@
+{
+  "name": "cdbf1157-1c94-40e9-b00c-bed89059412b",
+  "displayName": "Crisis Support",
+  "transitionRoutes": [ {
+    "intent": "escalation-crisis-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Crisis Response",
+    "name": "1d7607e0-5966-44a2-b927-c612d40677b4"
+  }, {
+    "intent": "see-resources-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Resources",
+    "name": "2334dec6-223f-4f69-b588-e1619aacd423"
+  }, {
+    "intent": "Default Welcome Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I hear you, and I'm really glad you reached out. What you're feeling is valid — nursing is incredibly hard, and it's okay to not be okay.\n\nPlease reach out to one of these right now:\n📞 Samaritans of Singapore (SOS): 1767 (available 24 hours)\n📞 IMH Mental Health Helpline: 6389 2222 (available 24 hours)\n\nIf you're at work, please speak to your Nurse Unit Manager or a trusted colleague today. Your hospital's Employee Assistance Programme (EAP) is also there for you — ask your HR team to connect you.\n\nYou don't have to face this alone. Take one slow breath. You took a brave step by sharing this. Let me know if you want to see the resources available." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "727a6a6c-9842-4858-a0d2-521f183b744a"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e753aaa4-feed-403d-aaed-fb0743bc9872"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c001a69d-f60d-41b9-9924-485adab438c1"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC"
+  },
+  "advancedSettings": {
+    "enabled": true
+  },
+  "nluSettingsList": [ {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "customConfigKey": "2f31856e-636f-4d0f-88e3-1433e156f9bf",
+    "languageCode": "en"
+  } ]
+}

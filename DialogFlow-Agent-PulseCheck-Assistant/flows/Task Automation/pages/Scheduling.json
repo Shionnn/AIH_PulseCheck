@@ -1,0 +1,31 @@
+{
+  "name": "04646832-3f45-4166-8c26-dcbed98c6168",
+  "displayName": "Scheduling",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "For scheduling and leave queries:\r\n• Annual leave application → apply via the HR self-service portal, then inform your Ward Manager\r\n• Shift swap → contact your Nurse Manager directly to get it approved and documented\r\n• Leave balance or entitlements → log in to the HR self-service portal\r\n• Confirmed leave dates → share your details and I'll generate a leave confirmation, send it to your email, and add it to your calendar\r\n\r\nTell me what you need and I'll help where I can.\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Start Page",
+    "name": "6b70a9be-11ac-427b-abd1-6edddc750817"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "scheduling_leave"
+    },
+    "name": "ce3e515b-d5cb-46c6-9bd0-617b8d5d4019"
+  } ]
+}

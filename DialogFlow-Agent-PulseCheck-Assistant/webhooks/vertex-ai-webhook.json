@@ -1,0 +1,11 @@
+{
+  "name": "646453e8-9559-4b92-a375-e029befeb12d",
+  "displayName": "vertex-ai-webhook",
+  "genericWebService": {
+    "uri": "https://vertex-ai-handler-421854305645.asia-southeast1.run.app",
+    "webhookType": "STANDARD"
+  },
+  "timeout": {
+    "seconds": 30
+  }
+}

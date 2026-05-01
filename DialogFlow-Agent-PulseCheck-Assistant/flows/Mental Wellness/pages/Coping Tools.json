@@ -1,0 +1,31 @@
+{
+  "name": "fa08c98f-d885-404f-8be9-a0c64b2919f9",
+  "displayName": "Coping Tools",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Let's find something that works for you right now. I can help with:\r\n\r\n🌬️  Box breathing — calm your nervous system in under 5 minutes\r\n🧲  Grounding exercise — 5-4-3-2-1 to bring you back to the present\r\n📝  Journaling prompts — help you put your thoughts into words\r\n🧘  Body scan — release tension you didn't know you were holding\r\n\r\nWhat sounds most helpful right now? Or just tell me how you're feeling and I'll suggest something.\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main Menu",
+    "name": "8474a149-19bd-4601-8ab1-45c598f45571"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "coping_tools"
+    },
+    "name": "da056006-f958-4e32-bdf3-52f62aa8a25c"
+  } ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "7daa7821-5023-4d98-91cf-f780a3c5e77c",
+  "displayName": "Handover Notes",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I'll help you draft your SBAR handover notes. Give me a summary of the situation on your ward — patient name, what's happening, background, and any recommendations.\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Start Page",
+    "name": "fbad9f77-4556-42a6-bda9-e6bae50b2e25"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "sbar_handover"
+    },
+    "name": "8f2a26bb-7909-4ecb-b973-7cade84dbf77"
+  } ]
+}

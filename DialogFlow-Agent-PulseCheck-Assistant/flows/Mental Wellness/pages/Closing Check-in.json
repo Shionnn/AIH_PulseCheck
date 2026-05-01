@@ -1,0 +1,33 @@
+{
+  "name": "a15bc11a-1aa2-485d-a164-7bb30225a82a",
+  "displayName": "Closing Check-in",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Before you go — I just want to check in one more time. How are you feeling compared to when we first started talking?\r\n" ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "vertex-ai-webhook",
+    "tag": "closing_check_in"
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main Menu",
+    "name": "410055db-5178-40cf-acb5-8700ffe86a9b"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "support_tools"
+    },
+    "name": "42d2fc50-5621-48d4-a930-674bcf9c6c44"
+  } ]
+}

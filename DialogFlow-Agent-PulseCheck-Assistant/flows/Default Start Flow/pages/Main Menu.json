@@ -1,0 +1,97 @@
+{
+  "name": "46ca6e7a-7dab-4bf7-83c2-9e21ab0c5e1d",
+  "displayName": "Main Menu",
+  "form": {
+    "parameters": [ {
+      "displayName": "SMenuNumber",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Hi $session.params.person.name! I'm PulseCheck, your personal wellness and clinical assistant. 👋\r\n\r\nI'm here to help you with:\r\n\r\n1. 💚 Mental Wellness — emotional support, mood check-ins \u0026 coping tools\r\n2. 💊 Clinical Info — medication checks \u0026 clinical protocols\r\n3. ✅ Task Automation — handover notes, scheduling \u0026 reminders\r\n4. 🆘 Crisis Support — urgent help \u0026 mental health resources\r\n\r\nWhat do you need today? Type a number or just describe what's on your mind." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "mental-wellness-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Mental Wellness",
+    "name": "a76f09cd-0a70-49ee-9a37-3c5168436cc7"
+  }, {
+    "intent": "escalation-crisis-intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I hear you, and I'm really glad you reached out. What you're feeling is valid — nursing is incredibly hard, and it's okay to not be okay.\r\n\r\nPlease reach out to one of these right now:\r\n📞 Samaritans of Singapore (SOS): 1767 (available 24 hours)\r\n📞 IMH Mental Health Helpline: 6389 2222 (available 24 hours)\r\n\r\nIf you're at work, please speak to your Nurse Unit Manager or a trusted colleague today. Your hospital's Employee Assistance Programme (EAP) is also there for you — ask your HR team to connect you.\r\n\r\nYou don't have to face this alone. Take one slow breath. You took a brave step by sharing this. Let me know if you want to see the resources available." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Crisis Support",
+    "name": "da79edbd-e3a5-4fac-b794-fa15cfafe0c4"
+  }, {
+    "intent": "task-automation-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Task Automation",
+    "name": "9132fd41-827f-46e4-8256-672eae4d391e"
+  }, {
+    "intent": "clinical-info-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Clinical Info",
+    "name": "a2e2ebac-dfae-4f97-a3b2-c987e16bedff"
+  }, {
+    "intent": "medication-lookup-intent",
+    "triggerFulfillment": {
+    
+    },
+    "name": "2f2a7a6e-36a2-4f31-8183-ef5255332b69"
+  }, {
+    "condition": "$session.params.SMenuNumber = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Mental Wellness",
+    "name": "0c12cc7b-244f-4319-a169-bcdfc2840288"
+  }, {
+    "condition": "$session.params.SMenuNumber = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Clinical Info",
+    "name": "b548af90-cee2-4bc8-8a15-3417574ee801"
+  }, {
+    "condition": "$session.params.SMenuNumber = 3",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Task Automation",
+    "name": "d2f25899-83d6-48f6-a5bf-5ee70dbb9922"
+  }, {
+    "condition": "$session.params.SMenuNumber = 4",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I hear you, and I'm really glad you reached out. What you're feeling is valid — nursing is incredibly hard, and it's okay to not be okay.\r\n\r\nPlease reach out to one of these right now:\r\n📞 Samaritans of Singapore (SOS): 1767 (available 24 hours)\r\n📞 IMH Mental Health Helpline: 6389 2222 (available 24 hours)\r\n\r\nIf you're at work, please speak to your Nurse Unit Manager or a trusted colleague today. Your hospital's Employee Assistance Programme (EAP) is also there for you — ask your HR team to connect you.\r\n\r\nYou don't have to face this alone. Take one slow breath. You took a brave step by sharing this. Let me know if you want to see the resources available." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Crisis Support",
+    "name": "ce7bf3c5-2919-4fc7-89f3-f8a377905f16"
+  } ]
+}

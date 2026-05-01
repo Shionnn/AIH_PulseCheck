@@ -1,0 +1,33 @@
+{
+  "name": "cc9eb98c-629b-4de7-9475-154b2d0e57ad",
+  "displayName": "Resources",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I hear you, and I'm really glad you reached out.\nYou don't have to go through this alone.\n\nPlease contact these helplines immediately:\n\n🆘 SOS (Samaritans of Singapore): 1-767 (24/7)\n🧠 IMH Mental Health Helpline: 6389-2222 (24/7)\n💬 Care Corner Counselling: 1800-353-5800\n🏥 Or go to your nearest A\u0026E" ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "vertex-ai-webhook",
+    "tag": "support_tools"
+  },
+  "transitionRoutes": [ {
+    "intent": "escalation-crisis-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Crisis Response",
+    "name": "c36630cb-1eb1-4610-9d9c-5a79ae9ff02d"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "crisis_support"
+    },
+    "name": "746ae46a-07bc-418a-9b36-214f0f156bf8"
+  } ]
+}

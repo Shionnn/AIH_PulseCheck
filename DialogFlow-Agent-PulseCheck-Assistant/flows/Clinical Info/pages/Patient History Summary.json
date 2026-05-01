@@ -1,0 +1,31 @@
+{
+  "name": "6af0a573-f10a-426b-a99f-99f7c7bf6114",
+  "displayName": "Patient History Summary",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Share the patient's details — diagnoses, current medications, allergies, or any relevant history — and I'll put together a handover-ready summary with key care flags.\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main Menu",
+    "name": "2f949d4f-b1a0-4f52-b3a1-12d2012d1ad0"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "patient_history"
+    },
+    "name": "99667131-155f-46bf-ab63-6b84ef30bb0a"
+  } ]
+}

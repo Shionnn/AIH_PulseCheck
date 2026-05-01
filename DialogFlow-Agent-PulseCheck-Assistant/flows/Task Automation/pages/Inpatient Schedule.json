@@ -1,0 +1,31 @@
+{
+  "name": "6df8d699-2a59-4318-b0a4-f7169fef225e",
+  "displayName": "Inpatient Schedule",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Give me your patients' names with their medications or treatments and the times due — I'll organise it into a clear schedule for your shift.\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main Menu",
+    "name": "895ecaa4-8768-4c5b-a4c2-76004b92091a"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "treatment_schedule"
+    },
+    "name": "5636938a-8238-4c72-b71b-f6a36b73657f"
+  } ]
+}

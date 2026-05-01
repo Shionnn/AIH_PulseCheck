@@ -1,0 +1,103 @@
+{
+  "name": "7d1e1746-3e04-406c-b5d2-2b2b0f0b1585",
+  "displayName": "Main Menu",
+  "form": {
+    "parameters": [ {
+      "displayName": "TAMenuNumber",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "You're in the Task Automation section. I can help you with:\r\n\r\n1️⃣  Shift handover notes (SBAR)\r\n2️⃣  Inpatient treatment schedule\r\n3️⃣  Scheduling and leave queries\r\n4️⃣  Patient education drafts\r\n5️⃣  Reminders and task checklists\r\n\r\nWhat do you need help with today?\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "handover-notes-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Handover Notes",
+    "name": "ef72f266-25a6-4cce-aa77-f1faf7d57ce6"
+  }, {
+    "intent": "scheduling-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Scheduling",
+    "name": "6e9d20fc-160e-4405-a5a8-cca2c381e378"
+  }, {
+    "intent": "reminders-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Reminders",
+    "name": "38f1aa9e-6d66-4791-b6e2-29e152d7b089"
+  }, {
+    "intent": "inpatient-schedule-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Inpatient Schedule",
+    "name": "14a8e7cc-74be-40c3-8fe0-ad3ba26575e5"
+  }, {
+    "intent": "patient-education-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Patient Education Draft",
+    "name": "2430287d-509b-4d42-a0e7-b69ba2fa5247"
+  }, {
+    "condition": "$session.params.TAMenuNumber = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Handover Notes",
+    "name": "7a8eaaf7-021a-4673-9cc5-d55e8226c697"
+  }, {
+    "condition": "$session.params.TAMenuNumber = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Inpatient Schedule",
+    "name": "d731c408-1cea-448c-a468-e8b95cbc80ec"
+  }, {
+    "condition": "$session.params.TAMenuNumber = 3",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Scheduling",
+    "name": "7f39aea2-f53c-446e-9bdf-49a7b7918ded"
+  }, {
+    "condition": "$session.params.TAMenuNumber = 4",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Patient Education Draft",
+    "name": "4a6c1b3d-c275-48c0-9157-4818f62c95b6"
+  }, {
+    "condition": "$session.params.TAMenuNumber = 5",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Reminders",
+    "name": "3f60db89-bdf1-4ab0-b27b-b42711ff1cda"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "work_tools"
+    },
+    "name": "d619a58d-09cc-4445-b04d-6b6397e18817"
+  } ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "2e3b6587-7cd9-4878-bf07-7690432843d9",
+  "displayName": "Emotional Support",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Sometimes it's hard to put into words what we're feeling — and that's okay. Whatever you're carrying right now, I'm here and I'm not going anywhere.\r\n\r\nWhat's been on your mind?\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "escalation-crisis-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Crisis Support",
+    "name": "567a3c37-2069-443f-a46a-a985e94b5fa8"
+  }, {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main Menu",
+    "name": "fda8391d-ea60-43d9-9b7a-c246708a3f6c"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "mental_wellness_general"
+    },
+    "name": "fe3905e9-be35-4e98-a68b-ee24236fb6de"
+  } ]
+}

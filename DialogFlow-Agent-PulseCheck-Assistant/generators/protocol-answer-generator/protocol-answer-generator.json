@@ -1,0 +1,13 @@
+{
+  "name": "5bf60b60-8e4e-4ac5-baf9-84e995a8ade6",
+  "displayName": "protocol-answer-generator",
+  "modelParameter": {
+    "temperature": 0.30000001,
+    "maxDecodeSteps": 800,
+    "topP": 0.94999999,
+    "topK": 40
+  },
+  "llmModelSettings": {
+    "model": "gemini-2.5-flash"
+  }
+}

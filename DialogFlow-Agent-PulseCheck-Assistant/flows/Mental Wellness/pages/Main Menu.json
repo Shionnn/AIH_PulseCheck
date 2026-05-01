@@ -1,0 +1,117 @@
+{
+  "name": "eea5c4ae-a02e-47c9-ab42-7f7b39121a17",
+  "displayName": "Main Menu",
+  "form": {
+    "parameters": [ {
+      "displayName": "MWmenuNumber",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "You're not alone in what you're carrying. This is a safe space — no judgment, no rush.\r\n\r\nI can help you with:\r\n1️⃣  Mood check-in\r\n2️⃣  Talk through something difficult\r\n3️⃣  Burnout assessment\r\n4️⃣  Breathing \u0026 coping exercises\r\n5️⃣  Peer support and resources\r\n\r\nOr just tell me how you're feeling right now and we'll go from there.\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "burnout-assessment-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Burnout Assesment",
+    "name": "d874e184-aae3-4420-9db7-353db0cb4a31"
+  }, {
+    "intent": "mindfulness-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Coping Tools",
+    "name": "ae21e58f-62f8-4a4f-8d1d-de514c2b0a15"
+  }, {
+    "intent": "peer-support-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Support Tools",
+    "name": "0250d096-90f3-4cd5-b26b-0e10f5979d4d"
+  }, {
+    "intent": "mood-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Mood Check in",
+    "name": "c1c4987e-46f4-4eb2-b12f-1a373c6698eb"
+  }, {
+    "intent": "debrief-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Emotional Support",
+    "name": "a1bf4ed9-f120-4660-910d-8dd9b6e2fa67"
+  }, {
+    "intent": "emotion-exploration-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Emotional Support",
+    "name": "babad982-01cc-45b6-81df-ae8ca59612dd"
+  }, {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Closing Check-in",
+    "name": "fc9e9c52-9ff0-41b0-a9e4-eadddeb31350"
+  }, {
+    "condition": "$session.params.MWmenuNumber = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Mood Check in",
+    "name": "56c2b843-04ee-4904-a939-4e0d90772cde"
+  }, {
+    "condition": "$session.params.MWmenuNumber = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Emotional Support",
+    "name": "a76002c8-5241-4b3a-92dd-aee31948319a"
+  }, {
+    "condition": "$session.params.MWmenuNumber = 3",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Burnout Assesment",
+    "name": "292de5ec-3d8d-4d27-b2a0-c69bbe47fae1"
+  }, {
+    "condition": "$session.params.MWmenuNumber = 4",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Coping Tools",
+    "name": "02bb59fc-e00a-417e-80dd-deadd935461c"
+  }, {
+    "condition": "$session.params.MWmenuNumber = 5",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Support Tools",
+    "name": "1b06f8b9-8a21-4b66-943f-a91663c615c9"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "mental_wellness_general"
+    },
+    "name": "311f662c-fda0-4f9e-a681-71b32b947083"
+  } ]
+}

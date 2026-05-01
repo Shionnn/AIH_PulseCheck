@@ -1,0 +1,105 @@
+{
+  "name": "9d9c52f9-fa07-4b40-a184-e914c808c04d",
+  "displayName": "Mood Check in",
+  "form": {
+    "parameters": [ {
+      "displayName": "chat_history",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "How are you feeling right now? Rate yourself from 1 to 5:\r\n\r\n1 — Really struggling\r\n2 — Not great\r\n3 — Okay\r\n4 — Pretty good\r\n5 — Great\r\n\r\nJust type the number.\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "ratingOne",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "low_mood_support",
+      "setParameterActions": [ {
+        "parameter": "mood_score",
+        "value": 1
+      } ]
+    },
+    "name": "948ad30a-9a6f-4e4b-86fc-3947642556b4"
+  }, {
+    "intent": "ratingTwo",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "low_mood_support",
+      "setParameterActions": [ {
+        "parameter": "mood_score",
+        "value": 2
+      } ]
+    },
+    "name": "d30dad2d-cf5b-4d82-88d8-0740660bda54"
+  }, {
+    "intent": "ratingThree",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "low_mood_support",
+      "setParameterActions": [ {
+        "parameter": "mood_score",
+        "value": 3
+      } ]
+    },
+    "name": "f1ee451e-97e5-4c56-8723-e092d3717969"
+  }, {
+    "intent": "ratingFour",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "low_mood_support",
+      "setParameterActions": [ {
+        "parameter": "mood_score",
+        "value": 4
+      } ]
+    },
+    "name": "c94a8637-3c8c-426e-ad03-46489215f83b"
+  }, {
+    "intent": "ratingFive",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "low_mood_support",
+      "setParameterActions": [ {
+        "parameter": "mood_score",
+        "value": 5
+      } ]
+    },
+    "name": "8eda3e12-58c6-4192-ae77-d031d670dc4f"
+  }, {
+    "intent": "escalation-crisis-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Crisis Support",
+    "name": "e810a48a-a783-4087-8dc1-2fff7d4a38f0"
+  }, {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Closing Check-in",
+    "name": "800bdb4e-1813-4b3e-baff-693c8ac112e9"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "low_mood_support",
+      "setParameterActions": [ {
+        "parameter": "mood_support_count",
+        "value": 1
+      } ]
+    },
+    "name": "01241e3b-aa9a-48ba-a35c-c43a0982371f"
+  } ]
+}

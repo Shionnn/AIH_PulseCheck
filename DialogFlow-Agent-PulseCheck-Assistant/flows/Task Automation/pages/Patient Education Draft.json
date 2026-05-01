@@ -1,0 +1,31 @@
+{
+  "name": "be470f05-e96e-47bd-9f0f-1562afa46b4b",
+  "displayName": "Patient Education Draft",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Which condition should the patient education note cover? I'll write it in plain, patient-friendly language.\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Start Page",
+    "name": "c903a6c4-e1e0-4e44-80de-932bd7ecabcc"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "education_draft"
+    },
+    "name": "8a1aa626-71ba-4328-941a-662a7bd813eb"
+  } ]
+}

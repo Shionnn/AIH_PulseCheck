@@ -1,0 +1,10 @@
+{
+  "name": "a190101f-2d5c-4478-81e5-e2f8670ab8e0",
+  "displayName": "mood-checkin-intent",
+  "parameters": [ {
+    "id": "number",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 7
+}

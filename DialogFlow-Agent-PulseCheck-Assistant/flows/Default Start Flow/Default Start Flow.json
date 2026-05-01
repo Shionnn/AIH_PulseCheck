@@ -1,0 +1,92 @@
+{
+  "name": "00000000-0000-0000-0000-000000000000",
+  "displayName": "Default Start Flow",
+  "description": "A start flow created along with the agent",
+  "transitionRoutes": [ {
+    "intent": "Default Welcome Intent",
+    "triggerFulfillment": {
+    
+    },
+    "name": "f386fa90-8648-4a0c-834f-8f597b2245fb"
+  }, {
+    "intent": "clinical-info-intent",
+    "triggerFulfillment": {
+    
+    },
+    "name": "601b4d2d-838b-4ffc-8c42-62bb0c2ba8f6"
+  }, {
+    "intent": "burnout-assessment-intent",
+    "triggerFulfillment": {
+    
+    },
+    "name": "ee976951-069e-4ea4-8306-ef9f17df74db"
+  }, {
+    "intent": "escalation-crisis-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Crisis Support",
+    "name": "278f7be0-691b-417e-a999-fba4d54a7b21"
+  }, {
+    "intent": "mental-wellness-intent",
+    "triggerFulfillment": {
+    
+    },
+    "name": "222ac39a-260c-4f2b-9d04-cef5a41022bc"
+  }, {
+    "intent": "task-automation-intent",
+    "triggerFulfillment": {
+    
+    },
+    "name": "d54e13bf-ea66-4b8c-9175-b21de2899bb7"
+  }, {
+    "intent": "Suicidal Thoughts",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Crisis Support",
+    "name": "cb3adcb9-cfc1-4092-86ad-5e9534bfe6e5"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "AskForName",
+    "name": "2eaf9c62-f9ae-41a6-9c22-a4b03c12227c"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "vertex-ai-webhook",
+      "tag": "opening_check_in"
+    },
+    "name": "1529bd52-8a2b-4523-90d9-26e15296af9a"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4424dce8-808e-4348-a2b4-d9a32c1702de"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  },
+  "nluSettingsList": [ {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "customConfigKey": "7129f1b9-25df-41ed-a442-152b12a19319",
+    "languageCode": "en"
+  } ]
+}

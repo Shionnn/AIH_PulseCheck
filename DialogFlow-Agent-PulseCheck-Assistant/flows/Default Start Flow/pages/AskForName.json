@@ -1,0 +1,37 @@
+{
+  "name": "997f7476-2b56-48b4-b2ab-fd44fa985eaa",
+  "displayName": "AskForName",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Hi! Before we start let us know your name!" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "getUserName",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main Menu",
+    "name": "49d5e9c1-6fc3-4236-9495-9f6acdf599f3"
+  }, {
+    "intent": "escalation-crisis-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Crisis Support",
+    "name": "369b7726-decc-4c63-a08d-e298056f92a7"
+  }, {
+    "intent": "Suicidal Thoughts",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Crisis Support",
+    "name": "91dc124e-6787-48ce-8856-ee63d45a09d2"
+  } ]
+}

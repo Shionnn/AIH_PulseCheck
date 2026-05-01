@@ -1,0 +1,31 @@
+{
+  "name": "54f9b383-5f1b-494d-bdc9-3d49532ed60c",
+  "displayName": "Patient Education",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Which condition or topic should the patient education note cover? E.g. \"heart failure\", \"post-op care\", \"diabetes management\".\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main Menu",
+    "name": "8ce0e6b2-155b-4344-bec5-568232fd6bde"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "patient_education"
+    },
+    "name": "63587028-f257-4025-9d49-2bc1ed53c143"
+  } ]
+}

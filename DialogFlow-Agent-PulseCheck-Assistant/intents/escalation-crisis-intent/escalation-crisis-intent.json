@@ -1,0 +1,10 @@
+{
+  "name": "2a1fca4d-43b6-4e58-9c57-f926a26c9751",
+  "displayName": "escalation-crisis-intent",
+  "parameters": [ {
+    "id": "number",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 25
+}

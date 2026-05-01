@@ -1,0 +1,10 @@
+{
+  "name": "eebada94-5af8-465b-b4c6-2b7a0b3085e2",
+  "displayName": "debrief-intent",
+  "parameters": [ {
+    "id": "date-time",
+    "entityType": "@sys.date-time"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 9
+}

@@ -1,0 +1,10 @@
+{
+  "name": "a38d052d-7ab3-4f09-89c4-394be69b0785",
+  "displayName": "handover-notes-intent",
+  "parameters": [ {
+    "id": "number",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 5
+}

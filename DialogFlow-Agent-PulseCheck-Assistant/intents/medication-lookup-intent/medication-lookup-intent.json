@@ -1,0 +1,10 @@
+{
+  "name": "b773f905-1a43-42f5-9891-9bf3164be636",
+  "displayName": "medication-lookup-intent",
+  "parameters": [ {
+    "id": "number",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 8
+}

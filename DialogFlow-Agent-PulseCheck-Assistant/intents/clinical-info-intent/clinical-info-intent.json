@@ -1,0 +1,13 @@
+{
+  "name": "2e9cd6f4-9f50-43ea-a25a-a412f2de2031",
+  "displayName": "clinical-info-intent",
+  "parameters": [ {
+    "id": "date-period",
+    "entityType": "@sys.date-period"
+  }, {
+    "id": "number",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 15
+}

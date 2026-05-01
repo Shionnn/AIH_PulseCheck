@@ -1,0 +1,31 @@
+{
+  "name": "91f4fa3c-316e-4cf9-af32-9b89da3a8baf",
+  "displayName": "Patient Care Guidance",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Tell me about the situation with your patient and I'll suggest the best approach. E.g. \"patient is refusing medication\", \"aggressive patient\", \"explaining diagnosis to a child\".\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main Menu",
+    "name": "0a697995-267a-4ec9-bcfa-3b87b46a5fd3"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "patient_care"
+    },
+    "name": "5054ef8e-4a92-4131-a2d4-3fb3826d6bbc"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "b7fad96f-1896-41f3-9d39-c86e43c3cc1b",
+  "displayName": "task-automation-intent",
+  "parameters": [ {
+    "id": "number",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 14
+}

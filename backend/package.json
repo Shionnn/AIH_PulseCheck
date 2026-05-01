@@ -1,0 +1,12 @@
+{
+  "name": "vertex-ai-handler",
+  "version": "1.0.0",
+  "description": "NurseWell chatbot — Dialogflow CX webhook to Vertex AI Gemini",
+  "main": "index.js",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "nodemailer": "^6.9.13",
+    "ics": "^3.7.2",
+    "@google-cloud/vertexai": "^1.1.0"
+  }
+}

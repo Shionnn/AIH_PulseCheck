@@ -1,0 +1,10 @@
+{
+  "name": "cbe2a333-e778-465a-982b-c9dbbc7d4ab2",
+  "displayName": "inpatient-schedule-intent",
+  "parameters": [ {
+    "id": "date-time",
+    "entityType": "@sys.date-time"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 4
+}

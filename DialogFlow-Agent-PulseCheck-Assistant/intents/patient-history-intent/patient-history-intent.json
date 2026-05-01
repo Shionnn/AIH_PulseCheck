@@ -1,0 +1,6 @@
+{
+  "name": "83bdbed8-2ad4-42f3-8e4c-7963ba971752",
+  "displayName": "patient-history-intent",
+  "priority": 500000,
+  "numTrainingPhrases": 4
+}

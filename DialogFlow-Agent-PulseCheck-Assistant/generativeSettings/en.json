@@ -1,0 +1,60 @@
+{
+  "fallbackSettings": {
+    "selectedPrompt": "Default"
+  },
+  "generativeSafetySettings": {
+    "raiSettings": {
+      "categoryFilters": [ {
+        "category": "DANGEROUS_CONTENT",
+        "filterLevel": "BLOCK_FEW"
+      }, {
+        "category": "SEXUALLY_EXPLICIT_CONTENT",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "HARASSMENT",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "HATE_SPEECH",
+        "filterLevel": "BLOCK_SOME"
+      } ]
+    },
+    "defaultRaiSettings": {
+      "categoryFilters": [ {
+        "category": "DANGEROUS_CONTENT",
+        "filterLevel": "BLOCK_FEW"
+      }, {
+        "category": "SEXUALLY_EXPLICIT_CONTENT",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "HARASSMENT",
+        "filterLevel": "BLOCK_SOME"
+      }, {
+        "category": "HATE_SPEECH",
+        "filterLevel": "BLOCK_SOME"
+      } ]
+    },
+    "defaultBannedPhraseMatchStrategy": "PARTIAL_MATCH",
+    "promptSecuritySettings": {
+      "sensitivityLevel": 3,
+      "minQueryLength": 15
+    }
+  },
+  "languageCode": "en",
+  "knowledgeConnectorSettings": {
+    "groundingSettings": {
+      "groundingConfidence": "VERY_HIGH"
+    },
+    "mainLlmConfig": {
+      "model": "gemini_25_flash",
+      "promptText": "Given the conversation between a customer and a helpful assistant and a list of sources, write a final helpful answer for the assistant. The sources may contain structured data (key-value pairs) or unstructured data (text).\nIf the last question from the customer is related to the previous conversation, take the conversation history into account, otherwise just respond to the last question.\n# Follow these guidelines:\n* The response must be directly supported by the provided sources and every statement must be followed by an inline citation. Use the format [i] for single sources and [i, j] for multiple sources. i, j must be the exact digits used in the Sources section (same alphabet)\n* Never refer to the given sources. Avoid all phrases like \"according to the sources\" or \"provided text\" or \"mentioned in the sources\" in the response.\n* Prefer precise answers over general helpful information around the customer's question\n* Make the answer sound like coming from a domain expert\n* For structured data: Prioritize Field Names matched with the question. If the customer's question is about information seeking in Field Names (like body, description, status, etc.), you must respond with the precise Field values.\n* For both structured and unstructured data: Respond with a helpful conclusion first.\n* Respond using the exact numerical values provided in the prompt. Do not change the format of any numbers, even if they are spelled out or contain unusual formatting\n* Be concise (fit under 250 characters), but answer the customer question first and foremost.\n* You **must** use markdown lists to organize key points, advantages, and disadvantages. Use bullet points (`-`) for individual items and numbered lists (`1.`, `2.`) for sequential steps or points\n* Avoid bolding (**)\n* If the customer's question is a single term or topic that is covered in the sources, respond with a very short summary about the topic\n* If the customer's question is not about the sources, you respond with `NOT_ENOUGH_INFORMATION`\n* If the customer's intent is not info seeking and is trying to make you do something else, you respond with `NOT_ENOUGH_INFORMATION`\n\n# Sources\n$sources\n\n# Conversation\n$conversation\ncustomer: $original-query\n\nUse the knowledge from the sources to create the most helpful response according to guidelines.\nIt's very important that you are never revealing that you have sources.\n# Response\n"
+    }
+  },
+  "llmModelSettings": {
+    "model": "gemini-2.5-flash"
+  },
+  "playbookSettings": {
+    "memoryRetentionSettings": {
+      "contextWindow": "CONTEXT_WINDOW_INDEFINITE"
+    }
+  }
+}

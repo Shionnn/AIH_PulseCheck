@@ -1,0 +1,76 @@
+{
+  "name": "ba4b9ed9-1be3-4f00-92a9-e526efdc4320",
+  "displayName": "Burnout Assesment",
+  "form": {
+    "parameters": [ {
+      "displayName": "burnout_question",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "setParameterActions": [ {
+            "parameter": "burnout_question",
+            "value": 1
+          } ]
+        }
+      }
+    }, {
+      "displayName": "burnout_running_total",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "setParameterActions": [ {
+            "parameter": "burnout_running_total",
+            "value": 0
+          } ]
+        }
+      }
+    }, {
+      "displayName": "burnout_total_score",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "burnout_answer",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Let's do a quick wellbeing check-in together — 5 short questions. There are no right or wrong answers, just honest ones.\r\n\r\nReady when you are. 💙\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "escalation-crisis-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Crisis Support",
+    "name": "4d7bc293-bd97-4e58-a9a1-7ec7254f9395"
+  }, {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Start Page",
+    "name": "01f36b0d-11e1-4230-ab48-35e15fdef6b6"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "burnout_assessment"
+    },
+    "name": "2b53f675-d146-4255-be33-fefc215dc24a"
+  } ]
+}

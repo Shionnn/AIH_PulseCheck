@@ -1,0 +1,7 @@
+{
+  "name": "d4af1c38-b075-40b7-b07d-59b090df0d43",
+  "displayName": "end conversation",
+  "priority": 500000,
+  "description": "this intent is triggered when users express that they want to move on/close",
+  "numTrainingPhrases": 6
+}

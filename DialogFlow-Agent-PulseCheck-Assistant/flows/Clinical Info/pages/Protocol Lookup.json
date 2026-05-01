@@ -1,0 +1,68 @@
+{
+  "name": "66f1500b-1562-4a4c-a61d-3f3778938df9",
+  "displayName": "Protocol Lookup",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Which protocol or procedure are you looking for? E.g. \"wound dressing\", \"code blue\", \"IV insertion\", \"patient discharge checklist\".\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main Menu",
+    "name": "74ecb0a4-42c8-41e0-a0f6-7666dcf8bd4e"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "clinical_protocols"
+    },
+    "name": "2a82d8ce-6d84-45aa-8f6e-eaf6031abe75"
+  } ],
+  "knowledgeConnectorSettings": {
+    "enabled": true,
+    "triggerFulfillment": {
+      "messages": [ {
+        "languageCode": "en",
+        "knowledgeInfoCard": {
+          "maximumSnippets": 1
+        }
+      } ],
+      "generators": [ {
+        "generator": "projects/aih-project-490605/locations/asia-southeast1/agents/59bf9bec-ca21-4090-a490-f456e3d32bcb/generators/5bf60b60-8e4e-4ac5-baf9-84e995a8ade6",
+        "outputParameter": "$request.generative."
+      } ]
+    },
+    "dataStoreConnections": [ {
+      "dataStoreType": "UNSTRUCTURED",
+      "dataStore": "projects/421854305645/locations/global/collections/default_collection/dataStores/clinical-info_1774935382652",
+      "languageCode": "en",
+      "documentProcessingMode": "DOCUMENTS",
+      "aclConfig": {
+      
+      },
+      "engineType": "CHAT_ENGINE",
+      "connectorConfig": {
+      
+      },
+      "createTime": {
+        "seconds": 1774935381,
+        "nanos": 982535000
+      },
+      "displayName": "clinical-info",
+      "dialogflowAddTime": {
+        "seconds": 1775069057,
+        "nanos": 500000000
+      }
+    } ]
+  }
+}

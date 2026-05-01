@@ -1,0 +1,82 @@
+{
+  "name": "1e0a7bb7-b1b6-4479-bb83-32fe08b62b41",
+  "displayName": "Medication LookUp",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Which medication would you like to look up? You can give me the drug name, and optionally the patient's details for dose safety checking.\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Clinical Info",
+    "name": "4d784aef-20a5-4e90-95fe-fc5b7d24add9"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "medication_lookup"
+    },
+    "name": "dfbc11cf-e458-491e-ab2e-63ef4c66df5a"
+  } ],
+  "knowledgeConnectorSettings": {
+    "enabled": true,
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$request.knowledge.answers[0]" ]
+        },
+        "languageCode": "en"
+      }, {
+        "languageCode": "en",
+        "knowledgeInfoCard": {
+          "maximumSnippets": 1
+        }
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$request.knowledge.answers[0] != null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "$request.knowledge.answers[0]" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "dataStoreConnections": [ {
+      "dataStoreType": "UNSTRUCTURED",
+      "dataStore": "projects/421854305645/locations/global/collections/default_collection/dataStores/clinical-info_1774935382652",
+      "languageCode": "en",
+      "documentProcessingMode": "DOCUMENTS",
+      "aclConfig": {
+      
+      },
+      "engineType": "CHAT_ENGINE",
+      "connectorConfig": {
+      
+      },
+      "createTime": {
+        "seconds": 1774935381,
+        "nanos": 982535000
+      },
+      "displayName": "clinical-info",
+      "dialogflowAddTime": {
+        "seconds": 1775069915,
+        "nanos": 921000000
+      }
+    } ]
+  }
+}

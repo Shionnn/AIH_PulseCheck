@@ -1,0 +1,177 @@
+{
+  "name": "a6fcee87-df04-4f2b-9421-25cc156e0f72",
+  "displayName": "Mood Checkin with History",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Hi! I'm PulseCheck, your personal assistant. 👋\n\nI'm here to help you with:\n\n1. Mental Wellness — emotional support, mood check-ins, and coping tools\n2. Clinical Info — medication lookup and clinical protocols\n3. Task Automation — handover notes, scheduling, and reminders\n4. Crisis Support — urgent help and mental health resources\n\nHow can I help you today? You can type a number or describe what you need." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "1"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "mental-wellness-intent"
+      },
+      "currentPage": {
+        "name": "Main Menu",
+        "flow": "Mental Wellness"
+      },
+      "textResponses": [ {
+        "text": [ "You're not alone in what you're carrying. This is a safe space — no judgment, no rush.\n\nI can help you with:\n1. Mood check-in\n2. Talk through something difficult\n3. Breathing or mindfulness exercise\n4. Burnout assessment\n5. Peer support and external resources\n\nOr just tell me how you're feeling right now and we'll go from there." ]
+      } ],
+      "currentFlow": {
+        "name": "Mental Wellness"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "1"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "mood-checkin-intent"
+      },
+      "currentPage": {
+        "name": "Mood Check in",
+        "flow": "Mental Wellness"
+      },
+      "textResponses": [ {
+        "text": [ "How are you feeling right now? Rate yourself from 1 to 5: 1 — Really struggling, 2 — Not great, 3 — Okay, 4 — Good, 5 — Great. Just type the number. " ]
+      } ],
+      "currentFlow": {
+        "name": "Mental Wellness"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "2"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "ratingTwo"
+      },
+      "currentPage": {
+        "name": "Mood Check in",
+        "flow": "Mental Wellness"
+      },
+      "textResponses": [ {
+        "text": [ "Oof, a '2' on your mood scale really hits different. That sounds incredibly tough, and it makes perfect sense that you'd be feeling that way after everything you do.\n\nIt sounds like you're carrying a heavy load right now. What feels like it would help you most in this moment – just talking things through, trying a quick calming exercise, or maybe looking at some resources?" ]
+      } ],
+      "currentFlow": {
+        "name": "Mental Wellness"
+      }
+    },
+    "expectations": {
+      "expectedSessionParameters": [ {
+        "key": "chat_history",
+        "value": "[{\"role\":\"user\",\"text\":\"2\"},{\"role\":\"model\",\"text\":\"Oof, a '2' on your mood scale really hits different. That sounds incredibly tough, and it makes perfect sense that you'd be feeling that way after everything you do.\\n\\nIt sounds like you're carrying a heavy load right now. What feels like it would help you most in this moment – just talking things through, trying a quick calming exercise, or maybe looking at some resources?\"}]"
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "i want to talk things through. I had a rough day at work because of my Manager Fred. He was being very difficult and even reprimanded me for no valid reason."
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Mood Check in",
+        "flow": "Mental Wellness"
+      },
+      "textResponses": [ {
+        "text": [ "Oh, hearing about Manager Fred making your day even harder, especially when you're already feeling so low, that's just not right. It sounds incredibly frustrating to be reprimanded without a valid reason. That kind of treatment can really stick with you.\n\nDid this happen recently, or has this kind of thing with Fred been building up for a while?" ]
+      } ],
+      "currentFlow": {
+        "name": "Mental Wellness"
+      }
+    },
+    "expectations": {
+      "expectedSessionParameters": [ {
+        "key": "chat_history",
+        "value": "[{\"role\":\"user\",\"text\":\"2\"},{\"role\":\"model\",\"text\":\"Oof, a '2' on your mood scale really hits different. That sounds incredibly tough, and it makes perfect sense that you'd be feeling that way after everything you do.\\n\\nIt sounds like you're carrying a heavy load right now. What feels like it would help you most in this moment – just talking things through, trying a quick calming exercise, or maybe looking at some resources?\"},{\"role\":\"user\",\"text\":\"i want to talk things through. I had a rough day at work because of my Manager Fred. He was being very difficult and even reprimanded me for no valid reason.\"},{\"role\":\"model\",\"text\":\"Oh, hearing about Manager Fred making your day even harder, especially when you're already feeling so low, that's just not right. It sounds incredibly frustrating to be reprimanded without a valid reason. That kind of treatment can really stick with you.\\n\\nDid this happen recently, or has this kind of thing with Fred been building up for a while?\"}]"
+      } ]
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "It has been buliding up, what was the name of my manager?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Mood Check in",
+        "flow": "Mental Wellness"
+      },
+      "textResponses": [ {
+        "text": [ "It really sounds like this situation with Fred has been weighing on you for a while now, and yes, his name was Fred. That kind of consistent tension with a manager can be incredibly draining, especially when you're already feeling really low.\n\nSince we last chatted, has anything specific happened with Fred that's made things feel even heavier for you?" ]
+      } ],
+      "currentFlow": {
+        "name": "Mental Wellness"
+      }
+    },
+    "expectations": {
+      "expectedSessionParameters": [ {
+        "key": "chat_history",
+        "value": "[{\"role\":\"user\",\"text\":\"2\"},{\"role\":\"model\",\"text\":\"Oof, a '2' on your mood scale really hits different. That sounds incredibly tough, and it makes perfect sense that you'd be feeling that way after everything you do.\\n\\nIt sounds like you're carrying a heavy load right now. What feels like it would help you most in this moment – just talking things through, trying a quick calming exercise, or maybe looking at some resources?\"},{\"role\":\"user\",\"text\":\"i want to talk things through. I had a rough day at work because of my Manager Fred. He was being very difficult and even reprimanded me for no valid reason.\"},{\"role\":\"model\",\"text\":\"Oh, hearing about Manager Fred making your day even harder, especially when you're already feeling so low, that's just not right. It sounds incredibly frustrating to be reprimanded without a valid reason. That kind of treatment can really stick with you.\\n\\nDid this happen recently, or has this kind of thing with Fred been building up for a while?\"},{\"role\":\"user\",\"text\":\"It has been buliding up, what was the name of my manager?\"},{\"role\":\"model\",\"text\":\"It really sounds like this situation with Fred has been weighing on you for a while now, and yes, his name was Fred. That kind of consistent tension with a manager can be incredibly draining, especially when you're already feeling really low.\\n\\nSince we last chatted, has anything specific happened with Fred that's made things feel even heavier for you?\"}]"
+      } ]
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1774586103,
+    "nanos": 640426000
+  },
+  "testConfig": {
+    "trackingParameters": [ "chat_history" ],
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

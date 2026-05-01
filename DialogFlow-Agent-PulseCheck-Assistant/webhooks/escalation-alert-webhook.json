@@ -1,0 +1,11 @@
+{
+  "name": "d25f7032-d1b9-4bfa-af57-750c75da9d69",
+  "displayName": "escalation-alert-webhook",
+  "genericWebService": {
+    "uri": "https://escalation-alert-handler-421854305645.asia-southeast1.run.app",
+    "webhookType": "STANDARD"
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

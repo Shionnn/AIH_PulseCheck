@@ -1,0 +1,103 @@
+{
+  "name": "f5fa792b-f4ad-48ae-9417-e4848bf82ad1",
+  "displayName": "Main Menu",
+  "form": {
+    "parameters": [ {
+      "displayName": "CIMenuNumber",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "You're in the Clinical Info section. I can help with:\r\n\r\n1️⃣  Medication lookup — dosage, interactions, contraindications\r\n2️⃣  Clinical protocols and SOPs\r\n3️⃣  Patient history summary and care flags\r\n4️⃣  Patient care guidance\r\n5️⃣  Patient education materials\r\n\r\nWhat are you looking for? Type a number or describe what you need.\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "medication-lookup-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Medication LookUp",
+    "name": "ab64afb2-c50f-4c8c-9624-aff0b5f56d98"
+  }, {
+    "intent": "protocol-lookup-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Protocol Lookup",
+    "name": "e321897e-e756-4a14-b9bc-9f3a93e10006"
+  }, {
+    "intent": "patient-education-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Patient Education",
+    "name": "494eb541-7b49-4af8-88cb-e2dfa03cf794"
+  }, {
+    "intent": "patient-history-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Patient History Summary",
+    "name": "0a697a21-d4a4-45c2-b9b3-f2d35ad68036"
+  }, {
+    "intent": "patient-care-guidance-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Patient Care Guidance",
+    "name": "7d2a6c17-5a4f-407a-829d-1e35f8870441"
+  }, {
+    "condition": "$session.params.CIMenuNumber = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Medication LookUp",
+    "name": "4e249b1b-b8e8-4362-8f8c-fe8e95b7987d"
+  }, {
+    "condition": "$session.params.CIMenuNumber = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Protocol Lookup",
+    "name": "a996d572-d3a4-405d-adc0-0c4b9c7516b0"
+  }, {
+    "condition": "$session.params.CIMenuNumber = 3",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Patient History Summary",
+    "name": "94ba2f06-17b4-44fa-895d-77eb6dc5b7b8"
+  }, {
+    "condition": "$session.params.CIMenuNumber = 4",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Patient Care Guidance",
+    "name": "0b9d45a3-a154-4247-a90c-0e8b9bd1ed3b"
+  }, {
+    "condition": "$session.params.CIMenuNumber = 5",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Patient Education",
+    "name": "7f611aac-7ecd-4798-bfc5-12d42c6e5cae"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "clinical_helper"
+    },
+    "name": "bc0cc7cf-b68c-48d2-9806-fa069ebc4873"
+  } ]
+}

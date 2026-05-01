@@ -1,0 +1,31 @@
+{
+  "name": "983a70dd-c40c-41dd-b9f9-7f061a3c31ae",
+  "displayName": "Reminders",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I can help you set reminders for tasks or patient care.\r\n\r\n• Task reminder (e.g. submit incident report, attend meeting) → tell me the task, date, and time\r\n• Patient care reminder (e.g. check on Bed 3, medication round) → tell me the task, patient/bed, date, and time\r\n\r\nOnce confirmed, I'll add it to your calendar with a 15-minute alert and send the details to your email.\r\n\r\nWhat would you like to be reminded about?\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Start Page",
+    "name": "241f6de1-514f-45da-9727-e2a35332fba1"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "task_reminders"
+    },
+    "name": "e48e42b5-f0c8-4ea8-8500-029008643466"
+  } ]
+}

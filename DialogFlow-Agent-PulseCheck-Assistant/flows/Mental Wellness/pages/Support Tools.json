@@ -1,0 +1,31 @@
+{
+  "name": "06e9e7be-6bc3-4471-b9e0-c3d46d0618a9",
+  "displayName": "Support Tools",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "You don't have to navigate this alone. Here are some support options available to you:\r\n\r\n💼  EAP (Employee Assistance Programme) — free, confidential, via HR\r\n🏥  IMH Community Mental Health — 6389 2200 (Mon–Fri)\r\n🤝  Singapore Association for Mental Health — 1800-283-7019\r\n📱  Intellect app — daily check-ins and guided exercises\r\n👩‍⚕️  Singapore Nurses Association — sna.org.sg\r\n\r\nTell me a bit about what you're looking for and I'll help point you in the right direction.\r\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "closing-checkin-intent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Main Menu",
+    "name": "9b23de1c-46ea-432b-aab8-7d3bd7faaef8"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "webhook": "vertex-ai-webhook",
+      "tag": "support_tools"
+    },
+    "name": "c208ce90-a2d2-4d8f-9c2d-e47d1abb04e7"
+  } ]
+}
